@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b4eee0d94e4e04bb09021b81dfb22e, type: 3}
+  m_Name: sode-tsurikomi-goshi
+  m_EditorClassIdentifier: 
+  cardName: sode-tsurikomi-goshi
+  description: sode tsurikomi goshi
+  artwork: {fileID: -7944034784975196899, guid: 7e4d50be813fb034b9ac3b889b9cfdc0, type: 3}
+  AtackType: goshi waza
+  damage: 10
+  eff: 4
+  cost: 4
+  gripType:
+  - far
+  - mid

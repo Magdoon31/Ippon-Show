@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3d39b50245d4e41bfb212c009db8d9, type: 3}
+  m_Name: Mareczek
+  m_EditorClassIdentifier: 
+  enemyName: Mareczek
+  artwork: {fileID: 297761703447499198, guid: 09862e73c5f571441a491629b76088f5, type: 3}
+  health: 0
+  deck:
+  - {fileID: 11400000, guid: 6c2eea28f09600345b52580d5c16c6c7, type: 2}
+  - {fileID: 11400000, guid: 3ec5f49eaf469664fb070b58fc7b9baf, type: 2}
+  - {fileID: 11400000, guid: 54da24457f82db04b90976f8a219ddad, type: 2}
+  - {fileID: 11400000, guid: ae7e259b4955da54c99af6887b9bd87a, type: 2}
+  - {fileID: 11400000, guid: f64ca6a1c10979e43ad8357522c7c5f5, type: 2}

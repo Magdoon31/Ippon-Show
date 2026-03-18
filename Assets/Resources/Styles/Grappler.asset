@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f0fe3a3a9ed854ca716c2fc7576a31, type: 3}
+  m_Name: Grappler
+  m_EditorClassIdentifier: 
+  styleName: Grappler
+  description: Fights in close distance. Has -1 Hand size.
+  discardCount: 2
+  maxCombo: 1
+  handSizeModifier: -1
+  startingDeck:
+  - {fileID: 11400000, guid: e9a0708f9f4a91e4f88214c02885f90c, type: 2}
+  - {fileID: 11400000, guid: e9a0708f9f4a91e4f88214c02885f90c, type: 2}
+  - {fileID: 11400000, guid: 11ab22189184232419f06e068cd23b0e, type: 2}
+  - {fileID: 11400000, guid: 11ab22189184232419f06e068cd23b0e, type: 2}
+  - {fileID: 11400000, guid: 3ec5f49eaf469664fb070b58fc7b9baf, type: 2}
+  - {fileID: 11400000, guid: 54da24457f82db04b90976f8a219ddad, type: 2}
+  - {fileID: 11400000, guid: ae7e259b4955da54c99af6887b9bd87a, type: 2}
+  - {fileID: 11400000, guid: ae7e259b4955da54c99af6887b9bd87a, type: 2}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bec8142f2dcc44cb094847d07ed5e2, type: 3}
+  m_Name: BreakGrip
+  m_EditorClassIdentifier: 
+  cardName: Break Grip
+  description: Breaks the grip
+  artwork: {fileID: -8631084381994077964, guid: 8a18e01e6974943489175e44a0ab641f, type: 3}
+  precentage: 100
+  cost: 5
+  gripType: none
