@@ -27,6 +27,7 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+
         foreach (CardData card in ComboManager.Instance.comboCards) {
             Debug.Log(card+" "+ this.data);
             if (card == this.data)
