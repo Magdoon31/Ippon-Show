@@ -12,8 +12,8 @@ public class DeckManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        
-        
+
+
     }
     private void Start()
     {
@@ -26,7 +26,7 @@ public class DeckManager : MonoBehaviour
         while (HandManager.Instance.hand.Count < HandManager.Instance.handSize)
         {
 
-            if(player.Instance.deck.Count == 0)
+            if (player.Instance.deck.Count == 0)
             {
                 Debug.Log("Deck is empty, cannot draw more cards for hand initialization.");
                 break;
@@ -54,5 +54,22 @@ public class DeckManager : MonoBehaviour
     public void ResetDeck()
     {
         player.Instance.deck = new List<CardData>(player.Instance.originalDeck);
+    }
+    public void EnemyResetDeck()
+    {
+        Enemy enemy = FindFirstObjectByType<Enemy>();
+        enemy.deck = new List<CardData>(enemy.originalDeck);
+        ShuffleDeck();
+    }
+    private void ShuffleDeck()
+    {
+        Enemy enemy = FindFirstObjectByType<Enemy>();
+        for (int i = 0; i < enemy.deck.Count; i++)
+        {
+            CardData temp = enemy.deck[i];
+            int randomIndex = Random.Range(i, enemy.deck.Count);
+            enemy.deck[i] = enemy.deck[randomIndex];
+            enemy.deck[randomIndex] = temp;
+        }
     }
 }

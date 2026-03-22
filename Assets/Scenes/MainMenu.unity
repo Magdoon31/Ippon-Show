@@ -3741,7 +3741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPPrecToggle: {fileID: 1803471643}
-  target: {fileID: 0}
+  targets: []
 --- !u!1 &848425403
 GameObject:
   m_ObjectHideFlags: 0
@@ -8051,7 +8051,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 846306021}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: ShowHPPrec
+        m_MethodName: SaveSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemyData data;
     public Image EnemyArt;
     public List<CardData> deck = new List<CardData>();
+    public List<CardData> originalDeck = new List<CardData>();
     public int HPLevel { get; private set; }
     public void Initialize(EnemyData enemyData)
     {
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour
         }
         data = enemyData;
         deck = new List<CardData>(data.deck);
-
+        originalDeck = new List<CardData>(deck);
         health.currentHP = health.maxHP;
     }
 
