@@ -5,7 +5,6 @@ public class PlayCardButton : MonoBehaviour
     private CardData card;
     public void Execute()
     {
-        Debug.Log("Wykonano kartê:");
         ComboManager.Instance.ExecuteCombo();
         while (HandManager.Instance.handSize > HandManager.Instance.hand.Count)
         {
@@ -36,7 +35,6 @@ public class PlayCardButton : MonoBehaviour
                 HandManager.Instance.AddCard(newCard);
 
             CardUI.selectedCard = null ;
-            Debug.Log("Odrzucono kartê: ");
         RunManager.Instance.remainingDiscards--;
         RunManager.Instance.discardsRemaning.text = RunManager.Instance.remainingDiscards.ToString();
     }

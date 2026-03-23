@@ -15,39 +15,39 @@ public class PlayerHealthBarUI : MonoBehaviour
         if (target != null) {
             HPText.text = Math.Round(target.health.precentHP).ToString() + "%";
             if (target.health.HPLevel == 3)
-        { 
-            if (ColorUtility.TryParseHtmlString("#44C03D", out newColor))
-            {
-                Border.color = newColor;
+            { 
+                if (ColorUtility.TryParseHtmlString("#44C03D", out newColor))
+                {
+                    Border.color = newColor;
+                }
+                if (ColorUtility.TryParseHtmlString("#58FF4E", out newColor))
+                {
+                    HealthPlayer.color = newColor;
+                }
             }
-            if (ColorUtility.TryParseHtmlString("#58FF4E", out newColor))
+            if (target.health.HPLevel == 2)
             {
-                HealthPlayer.color = newColor;
+                if (ColorUtility.TryParseHtmlString("#C0A63D", out newColor))
+                {
+                    Border.color = newColor;
+                }
+                if (ColorUtility.TryParseHtmlString("#FFDE4E", out newColor))
+                {
+                    HealthPlayer.color = newColor;
+                }
             }
-        }
-        if (target.health.HPLevel == 2)
-        {
-            if (ColorUtility.TryParseHtmlString("#C0A63D", out newColor))
-            {
-                Border.color = newColor;
-            }
-            if (ColorUtility.TryParseHtmlString("#FFDE4E", out newColor))
-            {
-                HealthPlayer.color = newColor;
-            }
-        }
 
-        if (target.health.HPLevel == 1)
-        {
-            if (ColorUtility.TryParseHtmlString("#FF5733", out newColor))
+            if (target.health.HPLevel == 1)
             {
-                Border.color = newColor;
-            }
-            if (ColorUtility.TryParseHtmlString("#C03D44", out newColor))
-            {
-                HealthPlayer.color = newColor;
+                if (ColorUtility.TryParseHtmlString("#FF5733", out newColor))
+                {
+                    Border.color = newColor;
+                }
+                if (ColorUtility.TryParseHtmlString("#C03D44", out newColor))
+                {
+                    HealthPlayer.color = newColor;
+                }
             }
         }
-    }
     }
 }

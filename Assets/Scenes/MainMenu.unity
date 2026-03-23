@@ -568,6 +568,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127531530}
   m_CullTransparentMesh: 1
+--- !u!1 &157086260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157086262}
+  - component: {fileID: 157086261}
+  m_Layer: 0
+  m_Name: SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157086261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157086260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e72192f1652a0647abad6c84dfa7165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &157086262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157086260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1096.8586, y: 365.5495, z: -6.469886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &158887576
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,9 +707,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1034,7 +1078,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 10
+  m_ScrollSensitivity: 15
   m_Viewport: {fileID: 1674112466}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 174692454}
@@ -1641,9 +1685,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2217,9 +2261,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2587,6 +2631,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &499770663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2856,6 +2912,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: click
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &520844745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2985,9 +3053,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3558,6 +3626,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &767671839
@@ -4512,9 +4592,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5444,9 +5524,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6461,9 +6541,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6588,9 +6668,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7028,9 +7108,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8061,6 +8141,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: click
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1823221564
 GameObject:
@@ -8155,6 +8247,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: click
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1823221567
@@ -9122,9 +9226,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1866333926}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlaySound2D
+      - m_Target: {fileID: 157086261}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9232,9 +9336,9 @@ MonoBehaviour:
   bodyTypeText: {fileID: 1340270290}
   difficultyText: {fileID: 207294763}
   styles:
+  - {fileID: 11400000, guid: 0999050549ad9304b9bb72a7c31c292d, type: 2}
   - {fileID: 11400000, guid: 24ae59dfd7295834ab9deb66fe0eb1e4, type: 2}
   - {fileID: 11400000, guid: e67023a29b8c4d44e8bf0c4290fc87c7, type: 2}
-  - {fileID: 11400000, guid: 0999050549ad9304b9bb72a7c31c292d, type: 2}
   bodyTypes:
   - Muscular
   - Slim
@@ -9386,3 +9490,4 @@ SceneRoots:
   - {fileID: 1866333928}
   - {fileID: 868016225}
   - {fileID: 1833578108}
+  - {fileID: 157086262}

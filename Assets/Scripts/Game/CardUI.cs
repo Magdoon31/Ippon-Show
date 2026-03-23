@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CardUI : MonoBehaviour, IPointerClickHandler
 {
@@ -11,7 +12,6 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     public float selectedOffset = 40f;
     public Image artworkImage;
     public TMP_Text nameText;
-
     void Start()
     {
         rect = GetComponent<RectTransform>();
@@ -27,31 +27,33 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-
-        foreach (CardData card in ComboManager.Instance.comboCards) {
-            Debug.Log(card+" "+ this.data);
-            if (card == this.data)
+        if (SceneManager.GetActiveScene().name == "Game")
+        {
+            foreach (CardData card in ComboManager.Instance.comboCards)
             {
-                return;
+                Debug.Log(card + " " + this.data);
+                if (card == this.data)
+                {
+                    return;
+                }
             }
-        }
 
-        if (selectedCard != this)
-        {
-            if (selectedCard != null)
-                selectedCard.Deselect();
+            if (selectedCard != this)
+            {
+                if (selectedCard != null)
+                    selectedCard.Deselect();
 
-            selectedCard = this;
-            Select();
+                selectedCard = this;
+                Select();
+            }
+            else
+            {
+                Deselect();
+                selectedCard = null;
+            }
+            SoundManager.Instance.PlaySound2D("card");
         }
-        else
-        {
-            Deselect();
-            selectedCard = null;
-        }
-        SoundManager.Instance.PlaySound2D("card");
     }
-
     public void Select()
     {
         rect.anchoredPosition += new Vector2(0, selectedOffset);

@@ -31,7 +31,6 @@ public class DeckManager : MonoBehaviour
                 Debug.Log("Deck is empty, cannot draw more cards for hand initialization.");
                 break;
             }
-            Debug.Log("Drawing card for hand initialization...");
             CardData card = DrawCard();
             if (card != null)
                 HandManager.Instance.AddCard(card);

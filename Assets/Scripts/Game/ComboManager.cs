@@ -1,10 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ComboManager : MonoBehaviour
 {
     public static ComboManager Instance;
-
+    public GameObject gameOver;
     public Transform comboArea;
     public CardData card;
     public List<CardData> comboCards = new List<CardData>();
@@ -43,7 +44,6 @@ public class ComboManager : MonoBehaviour
     {
         foreach (CardData card in comboCards)
         {
-            WaitForSeconds wait = new WaitForSeconds(0.5f);
             SoundManager.Instance.PlaySound2D("card");
             if (card is GripCardData gripCard)
             {
@@ -51,7 +51,7 @@ public class ComboManager : MonoBehaviour
             }
             if (card is AtackCardData atackCard)
             {
-                PlayAttack(atackCard);
+                PlayAttack(atackCard,true);
             }
             
         }
@@ -62,10 +62,29 @@ public class ComboManager : MonoBehaviour
         }
         comboCards.Clear();
         RunManager.Instance.comboMaxAmmount.text = comboCards.Count + "/" + RunManager.Instance.maxCombo.ToString();
+        EnemyAI enemyAI = FindFirstObjectByType<EnemyAI>();
+        enemyAI.ExecuteTurn();
     }
-    public void PlayAttack(AtackCardData card)
+    public void EnemyExecuteCombo(CardData card)
     {
+            SoundManager.Instance.PlaySound2D("card");
+            if (card is GripCardData gripCard)
+            {
+                Debug.Log("Enemy played grip card: " + gripCard.cardName);
+                GripManager.Instance.UpdateGrip(gripCard.gripType);
+            }
+            if (card is AtackCardData atackCard)
+            {
+                Debug.Log("Enemy played attack card: " + atackCard.cardName);
+                PlayAttack(atackCard,false);
+            }
+    }
+    public void PlayAttack(AtackCardData card, bool executer)
+    {
+        // executer ->    true - player    false - enemy
+
         int i = 0;
+        int hpTier = 3;
         foreach (string grip in card.gripType)
         {
             if (grip == GripManager.Instance.gripStatus)
@@ -76,18 +95,31 @@ public class ComboManager : MonoBehaviour
             SoundManager.Instance.PlaySound2D("deny");
             return;
         }
-        int hpTier = enemy.health.HPLevel;
+        if (executer)   hpTier = enemy.health.HPLevel;
+        if (!executer) hpTier = player.Instance.health.HPLevel;
 
         bool thrown = ThrowSystem.TryThrow(card.eff, hpTier);
 
         if (thrown)
         {
-            Debug.Log("Enemy thrown!");
+            if (executer)
+            {
+                Debug.Log("Enemy thrown!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                enemy.health.currentHP = enemy.health.maxHP;
+                Destroy(enemy.gameObject);
+            }
+            else
+            {
+                Debug.Log("Player thrown!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                gameOver.SetActive(true);
+            }
+            
 
         }
         else
         {
-            enemy.health.TakeDamage(card.damage);
+            if (executer) enemy.health.TakeDamage(card.damage);
+            if (!executer) player.Instance.health.TakeDamage(card.damage);
         }
     }
 }

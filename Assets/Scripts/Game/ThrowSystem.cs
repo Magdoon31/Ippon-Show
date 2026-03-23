@@ -8,7 +8,7 @@ public static class ThrowSystem
         if (chance > 100f)
             chance = 100f;
         float roll = Random.Range(0f, 100f);
-
+        Debug.Log(chance + "% chance to throw. Rolled: " + roll);
         return roll <= chance;
     }
 }

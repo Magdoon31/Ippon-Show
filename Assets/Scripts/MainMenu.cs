@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         LoadVolume();
-        MusicManager.Instance.PlayMusic("Menu");
        
     }
     private void Update()

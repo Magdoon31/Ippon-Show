@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5805476462744884817}
   - component: {fileID: 9203240010302795813}
   - component: {fileID: 8441843935922468602}
+  - component: {fileID: 6668774192335156254}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -55,6 +56,7 @@ MonoBehaviour:
   data: {fileID: 0}
   EnemyArt: {fileID: 7119016386117453669}
   deck: []
+  originalDeck: []
 --- !u!222 &9203240010302795813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77,6 +79,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 20
   currentHP: 0
+--- !u!114 &6668774192335156254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903133676274813500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc473fd61cf618498eee15cd6627728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 5805476462744884817}
 --- !u!1 &3365321698888201112
 GameObject:
   m_ObjectHideFlags: 0

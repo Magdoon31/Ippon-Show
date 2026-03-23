@@ -29,10 +29,10 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        
         transitions = transitionsContainer.GetComponentsInChildren<SceneTransition>();
-        Debug.Log(transitions.Length);
+        LoadScene("MainMenu", "CrossFade");
     }
-
     public void LoadScene(string sceneName, string transitionName)
     {
         StartCoroutine(LoadSceneAsync(sceneName, transitionName));
@@ -44,10 +44,11 @@ public class LevelManager : MonoBehaviour
         transitionsContainer.SetActive(true);
         AsyncOperation scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
+
         yield return transition.AnimateTransitionIn();
-        
 
         progressBar.gameObject.SetActive(true);
+        
         yield return new WaitForSeconds(0.5f);
         progressBar.value = 0.2f;
         do
@@ -64,6 +65,10 @@ public class LevelManager : MonoBehaviour
         if (sceneName == "Game")
         {
             MusicManager.Instance.PlayMusic("Game");
+        }
+        if (sceneName == "MainMenu")
+        {
+            MusicManager.Instance.PlayMusic("Menu");
         }
         yield return transition.AnimateTransitionOut();
         transitionsContainer.SetActive(false);
